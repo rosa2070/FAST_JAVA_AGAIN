@@ -1,0 +1,12 @@
+7월 10, 2021 7:50:28 오후 ch11.MyLogger log
+INFO: log test
+7월 10, 2021 7:50:28 오후 ch11.MyLogger log
+WARNING: log test
+7월 10, 2021 7:50:28 오후 ch11.MyLogger log
+SEVERE: log test
+7월 10, 2021 7:50:36 오후 ch11.MyLogger log
+INFO: log test
+7월 10, 2021 7:50:36 오후 ch11.MyLogger log
+WARNING: log test
+7월 10, 2021 7:50:36 오후 ch11.MyLogger log
+SEVERE: log test
