@@ -2,9 +2,14 @@ package school.report;
 
 import java.util.ArrayList;
 
+import grade.BasicEvaluation;
+import grade.GradeEvaluation;
+import grade.MajorEvaluation;
 import school.School;
+import school.Score;
 import school.Student;
 import school.Subject;
+import utils.Define;
 
 public class GenerateGradeReport {
 	
@@ -54,6 +59,33 @@ public class GenerateGradeReport {
 	
 	public void getScoreGrade(Student student, Subject subject) {
 		
+		ArrayList<Score> scoreList = student.getScoreList();
+		int majorId = student.getMajorSubject().getSubjectId();
+		
+		GradeEvaluation[] gradeEvaluation = {new BasicEvaluation(), new MajorEvaluation()};
+		
+		for (int i = 0; i <scoreList.size(); i++) {
+			
+			Score score = scoreList.get(i);
+			if(score.getSubject().getSubjectId() == subject.getSubjectId()) {
+				String grade;
+				
+				if (score.getSubject().getSubjectId() == majorId) 
+					grade = gradeEvaluation[Define.SAB_TYPE].getGrade(score.getPoint());
+				else
+					grade = gradeEvaluation[Define.AB_TYPE].getGrade(score.getPoint());
+				buffer.append(score.getPoint());
+				buffer.append(":");
+				buffer.append(grade);
+				buffer.append(" | ");	
+			}
+		}
 	}
+	
+	public void makeFooter() {
+		buffer.append("\n");
+	}
+	
+	
 
 }
