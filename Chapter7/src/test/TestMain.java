@@ -17,7 +17,7 @@ public class TestMain {
 
 	public static void main(String[] args) {
 
-		TestMain test = TestMain();
+		TestMain test = new TestMain();
 		
 		test.createSubject();
 		test.createStudent();
